@@ -5,11 +5,11 @@
 Biomass time series data of 462 populations in the Jena experiment
 }
 \description{
-  The complete entire Jena dataset forms a four-level hierarchy: Level 1 (population or species), Level 2 (community or plot), Level 3 (block), and Level 4 (overall dataset). This dataset describes the four-level hierarchical structure. Each row corresponds to a population identifier (matching the corresponding row in Data_Jena_462_populations) and records the block, plot, and species to which that population belongs.\cr
+  The Jena Experiment consists of 76 plots arranged into 4 blocks, each containing 18–20 plots. Plots were sown along a gradient of 1, 2, 4, 8, or 16 species, resulting in a total of 462 populations. The biomass of each species in each plot was recorded annually from 2003 to 2024, except in 2004. This dataset contains the 21-year biomass time series for all 462 populations across 76 plots. This dataset is a population-by-time (462 x 21) data frame, in which each row represents apopulation and each column represents one year of biomass data.\cr
 }
 \usage{data(Data_Jena_462_populations)}
 \format{
-  \code{Data_Jena_462_populations} is a population-by-time (462 × 21) data frame with population identifiers as rows and time points as columns.
+  \code{Data_Jena_462_populations} is a population-by-time data frame with 462 rows and 21 columns. Each row represents a population, and each column represents one year of biomass data.
  }
 
 \keyword{datasets}

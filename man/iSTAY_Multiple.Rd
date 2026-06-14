@@ -2,7 +2,7 @@
 % Please edit documentation in R/Main_Function.R
 \name{iSTAY_Multiple}
 \alias{iSTAY_Multiple}
-\title{Calculate stability and synchrony for multiple time series.}
+\title{Computes gamma, alpha, and beta stability, together with synchrony, for multiple time series under either biomass-weighting (default) or equal-weighting schemes.}
 \usage{
 iSTAY_Multiple(
   data,
