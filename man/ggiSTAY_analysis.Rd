@@ -2,7 +2,7 @@
 % Please edit documentation in R/Main_Function.R
 \name{ggiSTAY_analysis}
 \alias{ggiSTAY_analysis}
-\title{Generates diversity–stability and diversity–synchrony relationship plots based on the output from iSTAY_Single or iSTAY_Multiple.}
+\title{ggplot2 extension for plotting diversity–stability and diversity– synchrony relationships.}
 \usage{
 ggiSTAY_analysis(output, x_variable, by_group = NULL, model = "LMM")
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/Main_Function.R
 \name{ggiSTAY_qprofile}
 \alias{ggiSTAY_qprofile}
-\title{Generates stability and synchrony profile plots based on the output from \code{iSTAY_Single}, \code{iSTAY_Multiple} or \code{iSTAY_Hier}.}
+\title{ggplot2 extension for plotting stability and synchrony profiles.}
 \usage{
 ggiSTAY_qprofile(output)
 }

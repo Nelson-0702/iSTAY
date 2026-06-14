@@ -2,7 +2,7 @@
 % Please edit documentation in R/Main_Function.R
 \name{iSTAY_Single}
 \alias{iSTAY_Single}
-\title{Calculates stability measures of order q > 0 for a single time series of biomass or other relevant variables.}
+\title{Calculate stability for a single time series.}
 \usage{
 iSTAY_Single(
   data,
@@ -30,7 +30,7 @@ Order_q: order of stability \cr
 Stability: stability measures of order q
 }
 \description{
-\code{iSTAY_Single} computes the stability of order q > 0 for a single time series.
+\code{iSTAY_Single} computes the stability of order q for a single time series.
 }
 \examples{
 # Computing stability of an individual metacommunity

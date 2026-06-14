@@ -2,7 +2,7 @@
 % Please edit documentation in R/Main_Function.R
 \name{iSTAY_Hier}
 \alias{iSTAY_Hier}
-\title{Computes gamma, alpha, and beta stability, together with synchrony, for hierarchical time series at each hierarchical level.}
+\title{Calculate stability and synchrony at each hierarchical level}
 \usage{
 iSTAY_Hier(
   data,
@@ -34,7 +34,7 @@ a data frame with the following columns: \cr
  Synchrony: synchrony measure of order q
 }
 \description{
-\code{iSTAY_Hier} computes gamma, alpha, and beta stability, together with synchrony, at each hierarchical level for time series of biomass or other variables. Currently, only the equal-weighting scheme is implemented for hierarchical analyses.
+\code{iSTAY_Hier} computes gamma, alpha, and beta stability, as well as synchrony, at each hierarchical level for time series of biomass or other variables. Currently, only the equal-weighting scheme is implemented for hierarchical analyses.
 }
 \examples{
 

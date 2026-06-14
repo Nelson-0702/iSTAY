@@ -5,9 +5,13 @@ utils::globalVariables(c(
   "type", "value", "x_max", "x_min"
 ))
 
-#' Calculates stability measures of order q > 0 for a single time series of biomass or other relevant variables.
+
+
+
+
+#' Calculate stability for a single time series.
 #'
-#' \code{iSTAY_Single} computes the stability of order q > 0 for a single time series.
+#' \code{iSTAY_Single} computes the stability of order q for a single time series.
 #'
 #' @param data A \code{vector} of time series data, or a \code{data.frame} with sampling units as rows and time points as columns.
 #' @param order.q A numerical vector specifying the orders of stability. Default is c(1,2).
@@ -91,9 +95,14 @@ iSTAY_Single <- function (data, order.q = c(1, 2), Alltime = TRUE, start_T = NUL
   return(result)
 }
 
-#' Computes gamma, alpha, and beta stability, together with synchrony, for multiple time series under either biomass-weighting (default) or equal-weighting schemes.
+
+
+
+
+
+#' Calculate stability and synchrony for multiple time series.
 #'
-#' \code{iSTAY_Multiple} computes gamma, alpha, and beta stability, together with synchrony, for multiple time-series. Two weighting schemes are implemented: biomass-weighting (analogous to size-weighting in diversity analysis) and equal-weighting.
+#' \code{iSTAY_Multiple} computes gamma, alpha, and beta stability, as well as synchrony, for multiple time-series data. Two weighting schemes are implemented: biomass-weighting (analogous to size-weighting in diversity analysis) and equal-weighting.
 #'
 #' @param data A \code{data.frame} containing multiple time series data, with sampling units as rows and time points as columns, or a \code{list} of \code{data.frames} with each data frame representing multiple time series.
 #' @param order.q A numerical vector specifying the orders of stability and synchrony. Default is c(1,2).
@@ -312,9 +321,14 @@ iSTAY_Multiple = function (data, order.q = c(1, 2), equal_weights = FALSE, Allti
   return(result)
 }
 
-#' Computes gamma, alpha, and beta stability, together with synchrony, for hierarchical time series at each hierarchical level.
+
+
+
+
+
+#' Calculate stability and synchrony at each hierarchical level
 #'
-#' \code{iSTAY_Hier} computes gamma, alpha, and beta stability, together with synchrony, at each hierarchical level for time series of biomass or other variables. Currently, only the equal-weighting scheme is implemented for hierarchical analyses.
+#' \code{iSTAY_Hier} computes gamma, alpha, and beta stability, as well as synchrony, at each hierarchical level for time series of biomass or other variables. Currently, only the equal-weighting scheme is implemented for hierarchical analyses.
 #'
 #' @param data A \code{data.frame} containing the hierarchical data, with sampling units as rows and time points as columns.
 #' @param structure The hierarchical structure of the input data.
@@ -637,7 +651,11 @@ iSTAY_Hier <- function(data, structure, order.q = c(1, 2), Alltime = TRUE, start
 }
 
 
-#' Generates stability and synchrony profile plots based on the output from \code{iSTAY_Single}, \code{iSTAY_Multiple} or \code{iSTAY_Hier}.
+
+
+
+
+#' ggplot2 extension for plotting stability and synchrony profiles.
 #'
 #' \code{ggiSTAY_qprofile} is a graphical function based on the output from the function \code{iSTAY_Single}, \code{iSTAY_Multiple} or \code{iSTAY_Hier}. It generates stability (and synchrony, if multiple time series are included) profiles that depict how stability and synchrony vary with the order q > 0.
 #'
@@ -963,7 +981,13 @@ ggiSTAY_qprofile <- function(output){
 
 
 
-#' Generates diversity–stability and diversity–synchrony relationship plots based on the output from iSTAY_Single or iSTAY_Multiple.
+
+
+
+
+
+
+#' ggplot2 extension for plotting diversity–stability and diversity– synchrony relationships.
 #'
 #' \code{ggiSTAY_analysis} is a graphical function based on the output from the functions \code{iSTAY_Single} or \code{iSTAY_Multiple}. It generates plots showing the relationships between stability (and synchrony if multiple time series are included) and an additional variable, such as diversity or another relevant factor.
 #'
