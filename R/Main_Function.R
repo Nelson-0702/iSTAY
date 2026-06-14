@@ -119,37 +119,53 @@ iSTAY_Single <- function (data, order.q = c(1, 2), Alltime = TRUE, start_T = NUL
 #'  Synchrony: synchrony measure of order q
 #'
 #' @examples
-#' # Computing gamma, alpha, and beta stability together with synchrony for 76 individual plots under equal-weighting
+#' # Computing gamma, alpha, and beta stability together with synchrony
+#' # for 76 individual plots under equal-weighting
+#' 
 #' data("Data_Jena_76_community_populations")
+#' 
 #' communities <- Data_Jena_76_community_populations
+#' 
 #' output_communities_equal <- iSTAY_Multiple(data = communities,
 #'                                           order.q = c(1, 2),
 #'                                           equal_weights = TRUE,
 #'                                           Alltime = TRUE)
+#'                                           
 #' output_communities_equal
 #'
-#' # Computing gamma, alpha, and beta stability together with synchrony for 76 individual plots under biomass/size weighting
+#' # Computing gamma, alpha, and beta stability together with synchrony 
+#' # for 76 individual plots under biomass/size weighting
+#' 
 #' output_communities_biomass <- iSTAY_Multiple(data = communities,
 #'                                             order.q = c(1, 2),
 #'                                             equal_weights = FALSE,
 #'                                             Alltime = TRUE)
+#'                                             
 #' output_communities_biomass
 #' 
 #' 
-#' # Computing gamma, alpha, and beta stability together with synchrony for 20 individual metacommunities under equal-weighting
+#' # Computing gamma, alpha, and beta stability together with synchrony 
+#' # for 20 individual metacommunities under equal-weighting
+#' 
 #' data("Data_Jena_20_metacommunities")
+#' 
 #' metacommunities <- Data_Jena_20_metacommunities
+#' 
 #' output_metacommunities_equal <- iSTAY_Multiple(data = metacommunities,
 #'                                               order.q = c(1, 2),
 #'                                               equal_weights = TRUE,
 #'                                               Alltime = TRUE)
+#'                                               
 #' output_metacommunities_equal
 #'
-#' # Computing gamma, alpha, and beta stability together with synchrony for 20 individual metacommunities under biomass/size weighting 
+#' # Computing gamma, alpha, and beta stability together with synchrony 
+#' # for 20 individual metacommunities under biomass/size weighting 
+#' 
 #' output_metacommunities_biomass <- iSTAY_Multiple(data = metacommunities,
 #'                                                 order.q = c(1, 2),
 #'                                                 equal_weights = FALSE,
 #'                                                 Alltime = TRUE)
+#'                                                 
 #' output_metacommunities_biomass
 #'
 #'
@@ -684,7 +700,9 @@ iSTAY_Hier <- function(data, structure, order.q = c(1, 2), Alltime = TRUE, start
 #' # See Example 1 in the iSTAY vignette for the output
 #' 
 #' community_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
-#' output_two_plots_q <- iSTAY_Single(data = community_aggregated[which(rownames(community_aggregated) %in% c("B1_4.B1A04", "B4_2.B4A14")),],
+#' 
+#' output_two_plots_q <- iSTAY_Single(data = community_aggregated[
+#' which(rownames(community_aggregated) %in% c("B1_4.B1A04", "B4_2.B4A14")),],
 #'                                   order.q=seq(0.1,2,0.1), 
 #'                                   Alltime = TRUE)
 #'
@@ -694,7 +712,9 @@ iSTAY_Hier <- function(data, structure, order.q = c(1, 2), Alltime = TRUE, start
 #' # See Example 3 in the iSTAY vignette for the output
 #' 
 #' individual_populations <- Data_Jena_462_populations
-#' output_two_populations_q <- iSTAY_Single(data = individual_populations[which(rownames(individual_populations) %in% c("B1A06_B1_16_BM_Ant.odo", "B1A06_B1_16_BM_Cam.pat")),],
+#' 
+#' output_two_populations_q <- iSTAY_Single(data = individual_populations[
+#' which(rownames(individual_populations) %in% c("B1A06_B1_16_BM_Ant.odo", "B1A06_B1_16_BM_Cam.pat")),],
 #'                                          order.q=seq(0.1,2,0.1), Alltime = TRUE)
 #'                
 #' ggiSTAY_qprofile(output = output_two_populations_q)
@@ -726,7 +746,8 @@ iSTAY_Hier <- function(data, structure, order.q = c(1, 2), Alltime = TRUE, start
 #'
 #'
 #'
-#' # Comparing gamma, alpha, and beta stability profiles, andsynchrony profiles for two selected metacommunities
+#' # Comparing gamma, alpha, and beta stability profiles, 
+#' # and synchrony profiles for two selected metacommunities
 #' # See Example 7 in the iSTAY vignette for the output.
 #'
 #' metacommunities <- Data_Jena_20_metacommunities
@@ -754,7 +775,7 @@ iSTAY_Hier <- function(data, structure, order.q = c(1, 2), Alltime = TRUE, start
 #' 
 #' 
 #' ## Hierarchical time series analysis
-#' # Plotting stability and synchrony profiles at each hierarchicallevel
+#' # Plotting stability and synchrony profiles at each hierarchical level
 #' # See Example 9 in the iSTAY vignette for the output
 #' 
 #' 
@@ -987,7 +1008,7 @@ ggiSTAY_qprofile <- function(output){
 
 
 
-#' ggplot2 extension for plotting diversity–stability and diversity– synchrony relationships.
+#' ggplot2 extension for plotting diversity–stability and diversity–synchrony relationships.
 #'
 #' \code{ggiSTAY_analysis} is a graphical function based on the output from the functions \code{iSTAY_Single} or \code{iSTAY_Multiple}. It generates plots showing the relationships between stability (and synchrony if multiple time series are included) and an additional variable, such as diversity or another relevant factor.
 #'
@@ -1020,11 +1041,14 @@ ggiSTAY_qprofile <- function(output){
 #' 
 #' community_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
 #' 
-#' output_community_aggregated_div <- iSTAY_Single(data = community_aggregated, order.q = c(1,2), Alltime = TRUE)
+#' output_community_aggregated_div <- iSTAY_Single(data = community_aggregated, 
+#'                                    order.q = c(1,2), Alltime = TRUE)
+#'                                    
 #' output_community_aggregated_div <- data.frame(output_community_aggregated_div,
-#'                                              log2_sowndiv = log2(as.numeric(do.call(rbind,
-#'                                                                 strsplit(output_community_aggregated_div[,1],"[._]+"))[,2])),
-#'                                              block=do.call(rbind, strsplit(output_community_aggregated_div[,1],"[._]+"))[,1])
+#'                                    log2_sowndiv = log2(as.numeric(do.call(rbind,
+#'                                    strsplit(output_community_aggregated_div[,1],"[._]+"))[,2])),
+#'                                    block=do.call(rbind,
+#'                                     strsplit(output_community_aggregated_div[,1],"[._]+"))[,1])
 #' 
 #'
 #' ggiSTAY_analysis(output = output_community_aggregated_div, x_variable = "log2_sowndiv", 
@@ -1037,6 +1061,7 @@ ggiSTAY_qprofile <- function(output){
 #' 
 #' output_individual_populations_div <- iSTAY_Single(data = individual_populations,
 #'                                                  order.q = c(1,2), Alltime=TRUE)
+#'                                                  
 #' output_individual_populations_div <- data.frame(output_individual_populations_div,
 #'                                                log2_sowndiv = log2(as.numeric(do.call(rbind,
 #'                                                        strsplit(output_individual_populations_div[,1],"[._]+"))[,3])),
@@ -1048,16 +1073,19 @@ ggiSTAY_qprofile <- function(output){
 #'
 #'
 #' ## Multiple time series analysis
-#' # Assessing relationships between diversity and gamma,alpha, and beta stability, together with synchrony, across 76 communities
+#' # Assessing relationships between diversity and gamma,alpha, and beta stability,
+#' # together with synchrony, across 76 communities
 #' # See Example 6 in the iSTAY vignette for the output.
 #' 
 #' # Equal-weighted analysis
 #' 
 #' communities <- Data_Jena_76_community_populations
 #' 
-#' output_communities_equal_div <- iSTAY_Multiple(data = communities, order.q = c(1, 2), equal_weights = TRUE, Alltime = TRUE)
+#' output_communities_equal_div <- iSTAY_Multiple(data = communities, order.q = c(1, 2),
+#'                                 equal_weights = TRUE, Alltime = TRUE)
 #'
-#' output_communities_equal_div <- data.frame(output_communities_equal_div, log2_sowndiv = log2(as.numeric(do.call(rbind, strsplit(output_communities_equal_div[, 1], "[._]+"))[, 3])),
+#' output_communities_equal_div <- data.frame(output_communities_equal_div, 
+#' log2_sowndiv = log2(as.numeric(do.call(rbind, strsplit(output_communities_equal_div[, 1], "[._]+"))[, 3])),
 #'   block = do.call(rbind, strsplit(output_communities_equal_div[, 1], "_"))[, 2])
 #'
 #' ggiSTAY_analysis(output = output_communities_equal_div,
@@ -1086,7 +1114,8 @@ ggiSTAY_qprofile <- function(output){
 #'                  model = "LMM")
 #'
 #'
-#' # Assessing relationships between diversity and gamma,alpha, and beta stability, together with synchrony, across 20 metacommunities
+#' # Assessing relationships between diversity and gamma,alpha, and beta stability, 
+#' # together with synchrony, across 20 metacommunities
 #' # See Example 8 in the iSTAY vignette for the output.
 #' 
 #' # Equal-weighted analysis

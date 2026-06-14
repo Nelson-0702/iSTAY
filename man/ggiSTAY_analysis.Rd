@@ -2,7 +2,7 @@
 % Please edit documentation in R/Main_Function.R
 \name{ggiSTAY_analysis}
 \alias{ggiSTAY_analysis}
-\title{ggplot2 extension for plotting diversity–stability and diversity– synchrony relationships.}
+\title{ggplot2 extension for plotting diversity–stability and diversity–synchrony relationships.}
 \usage{
 ggiSTAY_analysis(output, x_variable, by_group = NULL, model = "LMM")
 }
@@ -36,11 +36,14 @@ data("Data_Jena_hierarchical_structure")
 
 community_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
 
-output_community_aggregated_div <- iSTAY_Single(data = community_aggregated, order.q = c(1,2), Alltime = TRUE)
+output_community_aggregated_div <- iSTAY_Single(data = community_aggregated, 
+                                   order.q = c(1,2), Alltime = TRUE)
+                                   
 output_community_aggregated_div <- data.frame(output_community_aggregated_div,
-                                             log2_sowndiv = log2(as.numeric(do.call(rbind,
-                                                                strsplit(output_community_aggregated_div[,1],"[._]+"))[,2])),
-                                             block=do.call(rbind, strsplit(output_community_aggregated_div[,1],"[._]+"))[,1])
+                                   log2_sowndiv = log2(as.numeric(do.call(rbind,
+                                   strsplit(output_community_aggregated_div[,1],"[._]+"))[,2])),
+                                   block=do.call(rbind,
+                                    strsplit(output_community_aggregated_div[,1],"[._]+"))[,1])
 
 
 ggiSTAY_analysis(output = output_community_aggregated_div, x_variable = "log2_sowndiv", 
@@ -53,6 +56,7 @@ individual_populations <- Data_Jena_462_populations
 
 output_individual_populations_div <- iSTAY_Single(data = individual_populations,
                                                  order.q = c(1,2), Alltime=TRUE)
+                                                 
 output_individual_populations_div <- data.frame(output_individual_populations_div,
                                                log2_sowndiv = log2(as.numeric(do.call(rbind,
                                                        strsplit(output_individual_populations_div[,1],"[._]+"))[,3])),
@@ -64,16 +68,19 @@ ggiSTAY_analysis(output=output_individual_populations_div, x_variable="log2_sown
 
 
 ## Multiple time series analysis
-# Assessing relationships between diversity and gamma,alpha, and beta stability, together with synchrony, across 76 communities
+# Assessing relationships between diversity and gamma,alpha, and beta stability,
+# together with synchrony, across 76 communities
 # See Example 6 in the iSTAY vignette for the output.
 
 # Equal-weighted analysis
 
 communities <- Data_Jena_76_community_populations
 
-output_communities_equal_div <- iSTAY_Multiple(data = communities, order.q = c(1, 2), equal_weights = TRUE, Alltime = TRUE)
+output_communities_equal_div <- iSTAY_Multiple(data = communities, order.q = c(1, 2),
+                                equal_weights = TRUE, Alltime = TRUE)
 
-output_communities_equal_div <- data.frame(output_communities_equal_div, log2_sowndiv = log2(as.numeric(do.call(rbind, strsplit(output_communities_equal_div[, 1], "[._]+"))[, 3])),
+output_communities_equal_div <- data.frame(output_communities_equal_div, 
+log2_sowndiv = log2(as.numeric(do.call(rbind, strsplit(output_communities_equal_div[, 1], "[._]+"))[, 3])),
   block = do.call(rbind, strsplit(output_communities_equal_div[, 1], "_"))[, 2])
 
 ggiSTAY_analysis(output = output_communities_equal_div,
@@ -102,7 +109,8 @@ ggiSTAY_analysis(output = output_communities_biomass_div,
                  model = "LMM")
 
 
-# Assessing relationships between diversity and gamma,alpha, and beta stability, together with synchrony, across 20 metacommunities
+# Assessing relationships between diversity and gamma,alpha, and beta stability, 
+# together with synchrony, across 20 metacommunities
 # See Example 8 in the iSTAY vignette for the output.
 
 # Equal-weighted analysis

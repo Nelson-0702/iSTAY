@@ -32,7 +32,9 @@ data("Data_Jena_hierarchical_structure")
 # See Example 1 in the iSTAY vignette for the output
 
 community_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
-output_two_plots_q <- iSTAY_Single(data = community_aggregated[which(rownames(community_aggregated) \%in\% c("B1_4.B1A04", "B4_2.B4A14")),],
+
+output_two_plots_q <- iSTAY_Single(data = community_aggregated[
+which(rownames(community_aggregated) \%in\% c("B1_4.B1A04", "B4_2.B4A14")),],
                                   order.q=seq(0.1,2,0.1), 
                                   Alltime = TRUE)
 
@@ -42,7 +44,9 @@ ggiSTAY_qprofile(output = output_two_plots_q)
 # See Example 3 in the iSTAY vignette for the output
 
 individual_populations <- Data_Jena_462_populations
-output_two_populations_q <- iSTAY_Single(data = individual_populations[which(rownames(individual_populations) \%in\% c("B1A06_B1_16_BM_Ant.odo", "B1A06_B1_16_BM_Cam.pat")),],
+
+output_two_populations_q <- iSTAY_Single(data = individual_populations[
+which(rownames(individual_populations) \%in\% c("B1A06_B1_16_BM_Ant.odo", "B1A06_B1_16_BM_Cam.pat")),],
                                          order.q=seq(0.1,2,0.1), Alltime = TRUE)
                
 ggiSTAY_qprofile(output = output_two_populations_q)
@@ -74,7 +78,8 @@ ggiSTAY_qprofile(output = output_two_communities_biomass_q)
 
 
 
-# Comparing gamma, alpha, and beta stability profiles, andsynchrony profiles for two selected metacommunities
+# Comparing gamma, alpha, and beta stability profiles, 
+# and synchrony profiles for two selected metacommunities
 # See Example 7 in the iSTAY vignette for the output.
 
 metacommunities <- Data_Jena_20_metacommunities
@@ -102,7 +107,7 @@ ggiSTAY_qprofile(output = output_two_metacommunities_biomass_q)
 
 
 ## Hierarchical time series analysis
-# Plotting stability and synchrony profiles at each hierarchicallevel
+# Plotting stability and synchrony profiles at each hierarchical level
 # See Example 9 in the iSTAY vignette for the output
 
 
