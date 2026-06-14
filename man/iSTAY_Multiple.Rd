@@ -31,10 +31,11 @@ a data frame with the following columns: \cr
  Dataset: the input dataset \cr
  Order_q: order of stability or synchrony \cr
  Gamma, Alpha, Beta: stability measures of order q \cr 
- Synchrony: synchrony measure of order q
+ Synchrony: synchrony measure of order q \cr 
+ Weight: Weight: weighting scheme used in the analysis, either \code{"Equal weight"} or \code{"Biomass weight"} \cr
 }
 \description{
-\code{iSTAY_Multiple} computes gamma, alpha, and beta stability, as well as synchrony, for multiple time-series data. Two weighting schemes are implemented: biomass-weighting (analogous to size-weighting in diversity analysis) and equal-weighting.
+\code{iSTAY_Multiple} computes gamma, alpha, and beta stability, as well as synchrony, for multiple time series data. Two weighting schemes are implemented: biomass-weighting (analogous to size-weighting in diversity analysis) and equal-weighting.
 }
 \examples{
 # Computing gamma, alpha, and beta stability together with synchrony

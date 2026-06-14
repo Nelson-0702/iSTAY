@@ -68,8 +68,8 @@ ggiSTAY_analysis(output=output_individual_populations_div, x_variable="log2_sown
 
 
 ## Multiple time series analysis
-# Assessing relationships between diversity and gamma,alpha, and beta stability,
-# together with synchrony, across 76 communities
+# Assessing relationships between diversity and gamma, alpha, and beta stability,
+# as well as synchrony, across 76 communities
 # See Example 6 in the iSTAY vignette for the output.
 
 # Equal-weighted analysis
@@ -109,8 +109,8 @@ ggiSTAY_analysis(output = output_communities_biomass_div,
                  model = "LMM")
 
 
-# Assessing relationships between diversity and gamma,alpha, and beta stability, 
-# together with synchrony, across 20 metacommunities
+# Assessing relationships between diversity and gamma, alpha, and beta stability, 
+# as well as synchrony, across 20 metacommunities
 # See Example 8 in the iSTAY vignette for the output.
 
 # Equal-weighted analysis

@@ -21,25 +21,33 @@ utils::globalVariables(c(
 #'
 #'
 #'
-#' @return a dataframe with columns: \cr
+#' @return a data frame with the following columns: \cr
 #' Dataset: the input dataset \cr
 #' Order_q: order of stability \cr
 #' Stability: stability measures of order q
 #'
 #'
 #' @examples
-#' # Computing stability of an individual metacommunity
+#' # Computing stability of an individual community
+#' 
 #' data("Data_Jena_20_metacommunities")
-#' individual_plots <- do.call(rbind, Data_Jena_20_metacommunities)
-#' output_individual_plots <- iSTAY_Single(data = individual_plots, 
+#' 
+#' community_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
+#' 
+#' output_community_aggregated <- iSTAY_Single(data = community_aggregated, 
 #'                                         order.q=c(1,2), Alltime = TRUE)
-#' output_individual_plots
+#'                                         
+#' output_community_aggregated
 #'
 #' # Computing stability of an individual population
+#' 
 #' data("Data_Jena_462_populations")
+#' 
 #' individual_populations <- Data_Jena_462_populations
+#' 
 #' output_individual_populations <- iSTAY_Single(data = individual_populations, 
 #'                                               order.q = c(1,2), Alltime = TRUE)
+#'                                               
 #' output_individual_populations
 #'
 #' @export
@@ -102,7 +110,7 @@ iSTAY_Single <- function (data, order.q = c(1, 2), Alltime = TRUE, start_T = NUL
 
 #' Calculate stability and synchrony for multiple time series.
 #'
-#' \code{iSTAY_Multiple} computes gamma, alpha, and beta stability, as well as synchrony, for multiple time-series data. Two weighting schemes are implemented: biomass-weighting (analogous to size-weighting in diversity analysis) and equal-weighting.
+#' \code{iSTAY_Multiple} computes gamma, alpha, and beta stability, as well as synchrony, for multiple time series data. Two weighting schemes are implemented: biomass-weighting (analogous to size-weighting in diversity analysis) and equal-weighting.
 #'
 #' @param data A \code{data.frame} containing multiple time series data, with sampling units as rows and time points as columns, or a \code{list} of \code{data.frames} with each data frame representing multiple time series.
 #' @param order.q A numerical vector specifying the orders of stability and synchrony. Default is c(1,2).
@@ -116,8 +124,8 @@ iSTAY_Single <- function (data, order.q = c(1, 2), Alltime = TRUE, start_T = NUL
 #'  Dataset: the input dataset \cr
 #'  Order_q: order of stability or synchrony \cr
 #'  Gamma, Alpha, Beta: stability measures of order q \cr 
-#'  Synchrony: synchrony measure of order q
-#'
+#'  Synchrony: synchrony measure of order q \cr 
+#'  Weight: Weight: weighting scheme used in the analysis, either \code{"Equal weight"} or \code{"Biomass weight"} \cr 
 #' @examples
 #' # Computing gamma, alpha, and beta stability together with synchrony
 #' # for 76 individual plots under equal-weighting
@@ -1073,8 +1081,8 @@ ggiSTAY_qprofile <- function(output){
 #'
 #'
 #' ## Multiple time series analysis
-#' # Assessing relationships between diversity and gamma,alpha, and beta stability,
-#' # together with synchrony, across 76 communities
+#' # Assessing relationships between diversity and gamma, alpha, and beta stability,
+#' # as well as synchrony, across 76 communities
 #' # See Example 6 in the iSTAY vignette for the output.
 #' 
 #' # Equal-weighted analysis
@@ -1114,8 +1122,8 @@ ggiSTAY_qprofile <- function(output){
 #'                  model = "LMM")
 #'
 #'
-#' # Assessing relationships between diversity and gamma,alpha, and beta stability, 
-#' # together with synchrony, across 20 metacommunities
+#' # Assessing relationships between diversity and gamma, alpha, and beta stability, 
+#' # as well as synchrony, across 20 metacommunities
 #' # See Example 8 in the iSTAY vignette for the output.
 #' 
 #' # Equal-weighted analysis

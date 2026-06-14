@@ -24,7 +24,7 @@ iSTAY_Single(
 \item{end_T}{(Applicable only if \code{Alltime = FALSE}) a positive integer specifying the ending column (time point) for the analysis interval.}
 }
 \value{
-a dataframe with columns: \cr
+a data frame with the following columns: \cr
 Dataset: the input dataset \cr
 Order_q: order of stability \cr
 Stability: stability measures of order q
@@ -33,18 +33,26 @@ Stability: stability measures of order q
 \code{iSTAY_Single} computes the stability of order q for a single time series.
 }
 \examples{
-# Computing stability of an individual metacommunity
+# Computing stability of an individual community
+
 data("Data_Jena_20_metacommunities")
-individual_plots <- do.call(rbind, Data_Jena_20_metacommunities)
-output_individual_plots <- iSTAY_Single(data = individual_plots, 
+
+community_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
+
+output_community_aggregated <- iSTAY_Single(data = community_aggregated, 
                                         order.q=c(1,2), Alltime = TRUE)
-output_individual_plots
+                                        
+output_community_aggregated
 
 # Computing stability of an individual population
+
 data("Data_Jena_462_populations")
+
 individual_populations <- Data_Jena_462_populations
+
 output_individual_populations <- iSTAY_Single(data = individual_populations, 
                                               order.q = c(1,2), Alltime = TRUE)
+                                              
 output_individual_populations
 
 }
