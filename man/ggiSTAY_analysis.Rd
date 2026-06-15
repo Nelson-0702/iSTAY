@@ -40,14 +40,18 @@ output_community_aggregated_div <- iSTAY_Single(data = community_aggregated,
                                    order.q = c(1,2), Alltime = TRUE)
                                    
 output_community_aggregated_div <- data.frame(output_community_aggregated_div,
-                                   log2_sowndiv = log2(as.numeric(do.call(rbind,
-                                   strsplit(output_community_aggregated_div[,1],"[._]+"))[,2])),
-                                   block=do.call(rbind,
-                                    strsplit(output_community_aggregated_div[,1],"[._]+"))[,1])
+                                        log2_sowndiv = log2(as.numeric(do.call(rbind,
+                                        strsplit(output_community_aggregated_div[,1],
+                                        "[._]+"))[,2])),
+                                        block=do.call(rbind,
+                                        strsplit(output_community_aggregated_div[,1],
+                                        "[._]+"))[,1])
 
 
-ggiSTAY_analysis(output = output_community_aggregated_div, x_variable = "log2_sowndiv", 
-                by_group = "block", model = "LMM")
+ggiSTAY_analysis(output = output_community_aggregated_div,
+                 x_variable = "log2_sowndiv", 
+                 by_group = "block", 
+                 model = "LMM")
 
 # Assessing diversity-stability relationships based on 462 individual populations
 # See Example 4 in the iSTAY vignette for the output.
@@ -57,14 +61,19 @@ individual_populations <- Data_Jena_462_populations
 output_individual_populations_div <- iSTAY_Single(data = individual_populations,
                                                  order.q = c(1,2), Alltime=TRUE)
                                                  
-output_individual_populations_div <- data.frame(output_individual_populations_div,
-                                               log2_sowndiv = log2(as.numeric(do.call(rbind,
-                                                       strsplit(output_individual_populations_div[,1],"[._]+"))[,3])),
-                                               block = do.call(rbind,
-                                                     strsplit(output_individual_populations_div[,1],"[._]+"))[,2])
+output_individual_populations_div <- data.frame(
+                                          output_individual_populations_div,
+                                          log2_sowndiv = log2(as.numeric(do.call(rbind,
+                                          strsplit(output_individual_populations_div[,1],
+                                          "[._]+"))[,3])),
+                                          block = do.call(rbind,
+                                          strsplit(output_individual_populations_div[,1],
+                                          "[._]+"))[,2])
 
-ggiSTAY_analysis(output=output_individual_populations_div, x_variable="log2_sowndiv",
-                by_group="block", model="LMM")
+ggiSTAY_analysis(output=output_individual_populations_div,
+                 x_variable="log2_sowndiv",
+                 by_group="block", 
+                 model="LMM")
 
 
 ## Multiple time series analysis
@@ -76,13 +85,20 @@ ggiSTAY_analysis(output=output_individual_populations_div, x_variable="log2_sown
 
 communities <- Data_Jena_76_community_populations
 
-output_communities_equal_div <- iSTAY_Multiple(data = communities, order.q = c(1, 2),
-                                equal_weights = TRUE, Alltime = TRUE)
+output_communities_equal_div <- iSTAY_Multiple(
+                                     data = communities,
+                                     order.q = c(1, 2),
+                                     equal_weights = TRUE,
+                                     Alltime = TRUE)
 
-output_communities_equal_div <- data.frame(output_communities_equal_div, 
-log2_sowndiv = log2(as.numeric(do.call(rbind, 
-strsplit(output_communities_equal_div[, 1], "[._]+"))[, 3])),
-  block = do.call(rbind, strsplit(output_communities_equal_div[, 1], "_"))[, 2])
+output_communities_equal_div <- data.frame(
+                                     output_communities_equal_div, 
+                                     log2_sowndiv = log2(as.numeric(do.call(rbind, 
+                                     strsplit(output_communities_equal_div[, 1],
+                                     "[._]+"))[, 3])),
+                                     block = do.call(rbind, 
+                                     strsplit(output_communities_equal_div[, 1]
+                                     , "_"))[, 2])
 
 ggiSTAY_analysis(output = output_communities_equal_div,
                  x_variable = "log2_sowndiv",
@@ -100,9 +116,11 @@ output_communities_biomass_div <- iSTAY_Multiple(
 output_communities_biomass_div <- data.frame(
                                        output_communities_biomass_div,
                                        log2_sowndiv = log2(as.numeric(do.call(rbind,
-                                       strsplit(output_communities_biomass_div[, 1], "[._]+"))[, 3])),
+                                       strsplit(output_communities_biomass_div[, 1],
+                                       "[._]+"))[, 3])),
                                        block = do.call(rbind,
-                                       strsplit(output_communities_biomass_div[, 1], "_"))[, 2])
+                                       strsplit(output_communities_biomass_div[, 1]
+                                       , "_"))[, 2])
 
 ggiSTAY_analysis(output = output_communities_biomass_div,
                  x_variable = "log2_sowndiv",
@@ -127,9 +145,11 @@ output_metacommunities_equal_div <- iSTAY_Multiple(
 output_metacommunities_equal_div <- data.frame(
                                      output_metacommunities_equal_div,
                                      log2_sowndiv = log2(as.numeric(do.call(rbind,
-                                     strsplit(output_metacommunities_equal_div[, 1], "_"))[, 2])),
+                                     strsplit(output_metacommunities_equal_div[, 1],
+                                     "_"))[, 2])),
                                      block = do.call(rbind,
-                                     strsplit(output_metacommunities_equal_div[, 1], "_"))[, 1])
+                                     strsplit(output_metacommunities_equal_div[, 1],
+                                     "_"))[, 1])
 
 ggiSTAY_analysis(output = output_metacommunities_equal_div,
                  x_variable = "log2_sowndiv",
@@ -147,9 +167,11 @@ output_metacommunities_biomass_div <- iSTAY_Multiple(
 output_metacommunities_biomass_div <- data.frame(
                                        output_metacommunities_biomass_div,
                                        log2_sowndiv = log2(as.numeric(do.call(rbind,
-                                       strsplit(output_metacommunities_biomass_div[, 1], "_"))[, 2])),
+                                       strsplit(output_metacommunities_biomass_div[, 1],
+                                       "_"))[, 2])),
                                        block = do.call(rbind,
-                                       strsplit(output_metacommunities_biomass_div[, 1], "_"))[, 1])
+                                       strsplit(output_metacommunities_biomass_div[, 1],
+                                       "_"))[, 1])
 
 ggiSTAY_analysis(output = output_metacommunities_biomass_div,
                  x_variable = "log2_sowndiv",
