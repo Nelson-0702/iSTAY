@@ -31,10 +31,10 @@ data("Data_Jena_hierarchical_structure")
 # Comparing stability profiles for two selected individual plots
 # See Example 1 in the iSTAY vignette for the output
 
-community_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
+communities_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
 
-output_two_plots_q <- iSTAY_Single(data = community_aggregated[
-which(rownames(community_aggregated) \%in\% c("B1_4.B1A04", "B4_2.B4A14")),],
+output_two_plots_q <- iSTAY_Single(data = communities_aggregated[
+which(rownames(communities_aggregated) \%in\% c("B1_4.B1A04", "B4_2.B4A14")),],
                                   order.q=seq(0.1,2,0.1), 
                                   Alltime = TRUE)
 

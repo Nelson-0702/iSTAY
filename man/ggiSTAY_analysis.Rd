@@ -34,21 +34,21 @@ data("Data_Jena_hierarchical_structure")
 # Assessing diversity-stability relationships based on 76 individual plots 
 # See Example 2 in the iSTAY vignette for the output
 
-community_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
+communities_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
 
-output_community_aggregated_div <- iSTAY_Single(data = community_aggregated, 
+output_communities_aggregated_div <- iSTAY_Single(data = communities_aggregated, 
                                    order.q = c(1,2), Alltime = TRUE)
                                    
-output_community_aggregated_div <- data.frame(output_community_aggregated_div,
+output_communities_aggregated_div <- data.frame(output_communities_aggregated_div,
                                         log2_sowndiv = log2(as.numeric(do.call(rbind,
-                                        strsplit(output_community_aggregated_div[,1],
+                                        strsplit(output_communities_aggregated_div[,1],
                                         "[._]+"))[,2])),
                                         block=do.call(rbind,
-                                        strsplit(output_community_aggregated_div[,1],
+                                        strsplit(output_communities_aggregated_div[,1],
                                         "[._]+"))[,1])
 
 
-ggiSTAY_analysis(output = output_community_aggregated_div,
+ggiSTAY_analysis(output = output_communities_aggregated_div,
                  x_variable = "log2_sowndiv", 
                  by_group = "block", 
                  model = "LMM")

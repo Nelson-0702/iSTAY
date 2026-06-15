@@ -10,33 +10,33 @@
 
 Specifically, iSTAY provides the following measures and analyses:
 
-(1) \strong{Single time series}: For a time series (or for each time series analyzed individually), iSTAY computes stability measures of order q > 0 and displays the corresponding stability profile. The stability profile illustrates how stability varies with the order q. When biodiversity data are available, iSTAY also assesses the diversity–stability relationship across individual time series.\cr
+(1) \strong{Single time series}. For a time series (or for each time series analyzed individually), iSTAY computes stability measures of order q > 0 and displays the corresponding stability profile. The stability profile illustrates how stability varies with the order q. When biodiversity data are available, iSTAY also assesses the diversity–stability relationship across individual time series.\cr
 
-(2) \strong{Multiple time series}: For multiple time series (or for each set of time series within a collection), iSTAY computes four measures-gamma, alpha, and beta stability, together with synchrony. The package also displays the corresponding stability and synchrony profiles. Two weighting schemes are implemented: biomass-weighting (analogous to size-weighting in diversity analysis) and equal-weighting. When biodiversity data are available, iSTAY further assesses diversity–stability and diversity–synchrony relationships. \cr
+(2) \strong{Multiple time series}. For multiple time series (or for each set of time series within a collection), iSTAY computes four measures-gamma, alpha, and beta stability, together with synchrony. The package also displays the corresponding stability and synchrony profiles. Two weighting schemes are implemented: biomass-weighting (analogous to size-weighting in diversity analysis) and equal-weighting. When biodiversity data are available, iSTAY further assesses diversity–stability and diversity–synchrony relationships. \cr
 
-(3) \strong{Hierarchical time series}: For hierarchical time series, iSTAY computes gamma, alpha, and beta stability, together with synchrony at each hierarchical level and provides the corresponding stability and synchrony profiles. Currently, only the equal-weighting scheme is implemented for hierarchical analyses.\cr
+(3) \strong{Hierarchical time series}. For hierarchical time series, iSTAY computes gamma, alpha, and beta stability, together with synchrony at each hierarchical level and provides the corresponding stability and synchrony profiles. Currently, only the equal-weighting scheme is implemented for hierarchical analyses.\cr
 
 
 This package contains five main functions: \cr
 
-  1. \code{iSTAY_Single} Calculates stability measures of order q > 0 for a single time series of biomass or other relevant variables. \cr
+  1. \code{iSTAY_Single}: Calculates stability measures of order q > 0 for a single time series of biomass or other relevant variables. \cr
 
-  2. \code{iSTAY_Multiple} Computes gamma, alpha, and beta stability, as well as synchrony, for multiple time series under either biomass-weighting (default) or equal-weighting schemes. \cr
+  2. \code{iSTAY_Multiple}: Computes gamma, alpha, and beta stability, as well as synchrony, for multiple time series under either biomass-weighting (default) or equal-weighting schemes. \cr
 
-  3. \code{iSTAY_Hier} Computes gamma, alpha, and beta stability, as well as synchrony, for hierarchical time series at each hierarchical level. \cr
+  3. \code{iSTAY_Hier}: Computes gamma, alpha, and beta stability, as well as synchrony, for hierarchical time series at each hierarchical level. \cr
 
-  4. \code{ggiSTAY_qprofile} Generates stability and synchrony profile plots based on the output from \code{iSTAY_Single}, \code{iSTAY_Multiple} or \code{iSTAY_Hier}. \cr
+  4. \code{ggiSTAY_qprofile}: Generates stability and synchrony profile plots based on the output from \code{iSTAY_Single}, \code{iSTAY_Multiple} or \code{iSTAY_Hier}. \cr
 
-  5. \code{ggiSTAY_analysis} Generates diversity–stability and diversity–synchrony relationship plots based on the output from \code{iSTAY_Single} or \code{iSTAY_Multiple}. \cr
+  5. \code{ggiSTAY_analysis}: Generates diversity–stability and diversity–synchrony relationship plots based on the output from \code{iSTAY_Single} or \code{iSTAY_Multiple}. \cr
 
 }
 
 \references{
-Chao, A., Colwell, R. K., Shia, J., Thorn, S., Yang, M.-Y., Mitesser, O., et al. (2025) A continuum of information-based temporal stability measures and their decomposition across hierarchical levels. BioRxiv < https://doi.org/10.1101/2025.08.20.671203>\cr\cr
+Chao, A., Colwell, R. K., Shia, J., Thorn, S., Yang, M.-Y., Mitesser, O., et al. (2025). A continuum of information-based temporal stability measures and their decomposition across hierarchical levels. BioRxiv < https://doi.org/10.1101/2025.08.20.671203>\cr\cr
 
 Roscher, C. Schumacher, J., Baade, J., Wilcke, W., Gleixner, G., Weisser, W. W. et al. (2004). The role of biodiversity for element cycling and trophic interactions: an experimental approach in a grassland community. Basic and Applied Ecology, 5, 107–121.\cr\cr
 
-Wagg, C., Roscher, C., Weigelt, A., Vogel, A., Ebeling, A., De Luca, E. et al. (2022) Biodiversity–stability relationships strengthen over time in a long-term grassland experiment. Nature Communications, 13, 7752.\cr\cr
+Wagg, C., Roscher, C., Weigelt, A., Vogel, A., Ebeling, A., De Luca, E. et al. (2022). Biodiversity–stability relationships strengthen over time in a long-term grassland experiment. Nature Communications, 13, 7752.\cr\cr
 
 Weisser, W. W., Roscher, C., Meyer, S. T., Ebeling, A., Luo, G., Allan, E. et al. (2017). Biodiversity effects on ecosystem functioning in a 15-year grassland experiment: Patterns, mechanisms, and open questions. Basic and Applied Ecology, 23, 1–73.\cr\cr
 

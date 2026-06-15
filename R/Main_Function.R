@@ -28,18 +28,18 @@ utils::globalVariables(c(
 #'
 #'
 #' @examples
-#' # Computing stability of an individual community
+#' # Computing stability of individual communities
 #' 
 #' data("Data_Jena_20_metacommunities")
 #' 
-#' community_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
+#' communities_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
 #' 
-#' output_community_aggregated <- iSTAY_Single(data = community_aggregated, 
+#' output_communities_aggregated <- iSTAY_Single(data = communities_aggregated, 
 #'                                         order.q=c(1,2), Alltime = TRUE)
 #'                                         
-#' output_community_aggregated
+#' output_communities_aggregated
 #'
-#' # Computing stability of an individual population
+#' # Computing stability of individual populations
 #' 
 #' data("Data_Jena_462_populations")
 #' 
@@ -707,10 +707,10 @@ iSTAY_Hier <- function(data, structure, order.q = c(1, 2), Alltime = TRUE, start
 #' # Comparing stability profiles for two selected individual plots
 #' # See Example 1 in the iSTAY vignette for the output
 #' 
-#' community_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
+#' communities_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
 #' 
-#' output_two_plots_q <- iSTAY_Single(data = community_aggregated[
-#' which(rownames(community_aggregated) %in% c("B1_4.B1A04", "B4_2.B4A14")),],
+#' output_two_plots_q <- iSTAY_Single(data = communities_aggregated[
+#' which(rownames(communities_aggregated) %in% c("B1_4.B1A04", "B4_2.B4A14")),],
 #'                                   order.q=seq(0.1,2,0.1), 
 #'                                   Alltime = TRUE)
 #'
@@ -1049,21 +1049,21 @@ ggiSTAY_qprofile <- function(output){
 #' # Assessing diversity-stability relationships based on 76 individual plots 
 #' # See Example 2 in the iSTAY vignette for the output
 #' 
-#' community_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
+#' communities_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
 #' 
-#' output_community_aggregated_div <- iSTAY_Single(data = community_aggregated, 
+#' output_communities_aggregated_div <- iSTAY_Single(data = communities_aggregated, 
 #'                                    order.q = c(1,2), Alltime = TRUE)
 #'                                    
-#' output_community_aggregated_div <- data.frame(output_community_aggregated_div,
+#' output_communities_aggregated_div <- data.frame(output_communities_aggregated_div,
 #'                                         log2_sowndiv = log2(as.numeric(do.call(rbind,
-#'                                         strsplit(output_community_aggregated_div[,1],
+#'                                         strsplit(output_communities_aggregated_div[,1],
 #'                                         "[._]+"))[,2])),
 #'                                         block=do.call(rbind,
-#'                                         strsplit(output_community_aggregated_div[,1],
+#'                                         strsplit(output_communities_aggregated_div[,1],
 #'                                         "[._]+"))[,1])
 #' 
 #'
-#' ggiSTAY_analysis(output = output_community_aggregated_div,
+#' ggiSTAY_analysis(output = output_communities_aggregated_div,
 #'                  x_variable = "log2_sowndiv", 
 #'                  by_group = "block", 
 #'                  model = "LMM")
