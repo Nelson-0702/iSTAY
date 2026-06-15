@@ -46,7 +46,8 @@ ggiSTAY_qprofile(output = output_two_plots_q)
 individual_populations <- Data_Jena_462_populations
 
 output_two_populations_q <- iSTAY_Single(data = individual_populations[
-which(rownames(individual_populations) \%in\% c("B1A06_B1_16_BM_Ant.odo", "B1A06_B1_16_BM_Cam.pat")),],
+which(rownames(individual_populations) \%in\% 
+c("B1A06_B1_16_BM_Ant.odo", "B1A06_B1_16_BM_Cam.pat")),],
                                          order.q=seq(0.1,2,0.1), Alltime = TRUE)
                
 ggiSTAY_qprofile(output = output_two_populations_q)
@@ -54,7 +55,8 @@ ggiSTAY_qprofile(output = output_two_populations_q)
 
 
 ## Multiple time series analysis
-# Comparing gamma, alpha, and beta stability profiles, and synchrony profiles in two selected communities
+# Comparing gamma, alpha, and beta stability profiles, 
+# and synchrony profiles in two selected communities
 # See Example 5 in the iSTAY vignette for the output
 
 communities <- Data_Jena_76_community_populations

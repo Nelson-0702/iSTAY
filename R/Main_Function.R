@@ -722,7 +722,8 @@ iSTAY_Hier <- function(data, structure, order.q = c(1, 2), Alltime = TRUE, start
 #' individual_populations <- Data_Jena_462_populations
 #' 
 #' output_two_populations_q <- iSTAY_Single(data = individual_populations[
-#' which(rownames(individual_populations) %in% c("B1A06_B1_16_BM_Ant.odo", "B1A06_B1_16_BM_Cam.pat")),],
+#' which(rownames(individual_populations) %in% 
+#' c("B1A06_B1_16_BM_Ant.odo", "B1A06_B1_16_BM_Cam.pat")),],
 #'                                          order.q=seq(0.1,2,0.1), Alltime = TRUE)
 #'                
 #' ggiSTAY_qprofile(output = output_two_populations_q)
@@ -730,7 +731,8 @@ iSTAY_Hier <- function(data, structure, order.q = c(1, 2), Alltime = TRUE, start
 #'
 #'
 #' ## Multiple time series analysis
-#' # Comparing gamma, alpha, and beta stability profiles, and synchrony profiles in two selected communities
+#' # Comparing gamma, alpha, and beta stability profiles, 
+#' # and synchrony profiles in two selected communities
 #' # See Example 5 in the iSTAY vignette for the output
 #'
 #' communities <- Data_Jena_76_community_populations
@@ -1093,7 +1095,8 @@ ggiSTAY_qprofile <- function(output){
 #'                                 equal_weights = TRUE, Alltime = TRUE)
 #'
 #' output_communities_equal_div <- data.frame(output_communities_equal_div, 
-#' log2_sowndiv = log2(as.numeric(do.call(rbind, strsplit(output_communities_equal_div[, 1], "[._]+"))[, 3])),
+#' log2_sowndiv = log2(as.numeric(do.call(rbind, 
+#' strsplit(output_communities_equal_div[, 1], "[._]+"))[, 3])),
 #'   block = do.call(rbind, strsplit(output_communities_equal_div[, 1], "_"))[, 2])
 #'
 #' ggiSTAY_analysis(output = output_communities_equal_div,

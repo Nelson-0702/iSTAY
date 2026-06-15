@@ -80,7 +80,8 @@ output_communities_equal_div <- iSTAY_Multiple(data = communities, order.q = c(1
                                 equal_weights = TRUE, Alltime = TRUE)
 
 output_communities_equal_div <- data.frame(output_communities_equal_div, 
-log2_sowndiv = log2(as.numeric(do.call(rbind, strsplit(output_communities_equal_div[, 1], "[._]+"))[, 3])),
+log2_sowndiv = log2(as.numeric(do.call(rbind, 
+strsplit(output_communities_equal_div[, 1], "[._]+"))[, 3])),
   block = do.call(rbind, strsplit(output_communities_equal_div[, 1], "_"))[, 2])
 
 ggiSTAY_analysis(output = output_communities_equal_div,
