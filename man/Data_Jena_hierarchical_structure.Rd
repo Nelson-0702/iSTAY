@@ -5,7 +5,7 @@
 Four-level hierarchical structure of the Jena Experiment
 }
 \description{
-  The complete entire Jena dataset forms a four-level hierarchy: Level 1 (population or species), Level 2 (community or plot), Level 3 (block), and Level 4 (overall dataset). This dataset describes the four-level hierarchical structure. Each row corresponds to a population identifier (matching the corresponding row in \code{Data_Jena_462_populations}) and records the block, plot, and species to which that population belongs.
+  The complete Jena dataset forms a four-level hierarchy: Level 1 (population or species), Level 2 (community or plot), Level 3 (block), and Level 4 (overall dataset). This dataset describes the four-level hierarchical structure. Each row corresponds to a population identifier (matching the corresponding row in \code{Data_Jena_462_populations}) and records the block, plot, and species to which that population belongs.
 }
 \usage{data(Data_Jena_hierarchical_structure)}
 \format{
