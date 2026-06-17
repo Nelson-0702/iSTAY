@@ -1045,6 +1045,7 @@ ggiSTAY_qprofile <- function(output){
 #' data("Data_Jena_462_populations")
 #' data("Data_Jena_hierarchical_structure")
 #'
+#' \donttest{
 #' ## Single time series analysis
 #' # Assessing diversity-stability relationships based on 76 individual plots 
 #' # See Example 2 in the iSTAY vignette for the output
@@ -1067,7 +1068,7 @@ ggiSTAY_qprofile <- function(output){
 #'                  x_variable = "log2_sowndiv", 
 #'                  by_group = "block", 
 #'                  model = "LMM")
-#' \donttest{
+#' 
 #' # Assessing diversity-stability relationships based on 462 individual populations
 #' # See Example 4 in the iSTAY vignette for the output.
 #' 

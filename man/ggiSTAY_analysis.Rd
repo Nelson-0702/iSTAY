@@ -30,6 +30,7 @@ data("Data_Jena_76_community_populations")
 data("Data_Jena_462_populations")
 data("Data_Jena_hierarchical_structure")
 
+\donttest{
 ## Single time series analysis
 # Assessing diversity-stability relationships based on 76 individual plots 
 # See Example 2 in the iSTAY vignette for the output
@@ -178,5 +179,5 @@ ggiSTAY_analysis(output = output_metacommunities_biomass_div,
                  by_group = "block",
                  model = "LMM")
 
-
+}
 }
