@@ -62,7 +62,7 @@ Users publishing results obtained with the `iSTAY` package are requested to cite
 
 ## Software needed to run `iSTAY` in R
 - Required: [R](https://cran.r-project.org/)
-- Suggested: [RStudio IDE](https://posit.co/products/open-source/rstudio/#Desktop)
+- Suggested: [RStudio IDE](https://posit.co/products/open-source/rstudio#Desktop)
 
 
 ## Installing and loading `iSTAY`
@@ -200,6 +200,7 @@ head(Data_Jena_hierarchical_structure, 10)
 In this example, each plot (community) is treated as a single aggregated biomass time series and its stability profile from species-pooled community biomass is computed. Run the following code to compute stability values for orders q = 0.1 to q = 2.0 in increments of 0.1 for two selected plots (`B1_4.B1A04` and `B4_2.B4A14`). The first ten rows of the resulting output are displayed below.
 
 ```{r, eval=F}
+data("Data_Jena_20_metacommunities")
 communities_aggregated <- do.call(rbind, Data_Jena_20_metacommunities)
 output_two_plots_q <- iSTAY_Single(data = communities_aggregated[which(rownames(communities_aggregated) %in% c("B1_4.B1A04", "B4_2.B4A14")),],
                                order.q=seq(0.1,2,0.1), 

@@ -1067,7 +1067,7 @@ ggiSTAY_qprofile <- function(output){
 #'                  x_variable = "log2_sowndiv", 
 #'                  by_group = "block", 
 #'                  model = "LMM")
-#'
+#' \donttest{
 #' # Assessing diversity-stability relationships based on 462 individual populations
 #' # See Example 4 in the iSTAY vignette for the output.
 #' 
@@ -1193,7 +1193,7 @@ ggiSTAY_qprofile <- function(output){
 #'                  by_group = "block",
 #'                  model = "LMM")
 #'
-#'
+#'}
 #' @export
 
 ggiSTAY_analysis <- function(output, x_variable, by_group=NULL, model="LMM"){ 
